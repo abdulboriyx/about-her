@@ -1,5 +1,5 @@
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from handlers import RobotCallback, IntelligenceCallBack
+from handlers import RobotCallback, IntelligenceCallBack, ConsciousCallBack
 
 # Each Robot's Buttons
 atlas_button = InlineKeyboardButton(text="Atlas Robot", callback_data=RobotCallback(robot_name="Atlas").pack())
@@ -23,6 +23,16 @@ chc_theory = InlineKeyboardButton(text="Cattell-Horn-Carroll (CHC) Theory", call
 goleman_button = InlineKeyboardButton(text="Goleman's Emotional Intelligence", callback_data=IntelligenceCallBack(intelligence_name="Goleman's Emotional Intelligence").pack())
 
 
+# conscious button
+gwt_button = InlineKeyboardButton(text="Global Workspace Theory (GWT)", callback_data=ConsciousCallBack(conscious_thought="Global Workspace Theory (GWT)").pack())
+iit_button = InlineKeyboardButton(text="Integrated Information Theory", callback_data=ConsciousCallBack(conscious_thought="Integrated Information Theory (IIT)").pack())
+hot_button = InlineKeyboardButton(text="High-Order Thought Theory", callback_data=ConsciousCallBack(conscious_thought="High-Order Thought Theory").pack())
+bayesian_button = InlineKeyboardButton(text="Bayesian Brain Theory", callback_data=ConsciousCallBack(conscious_thought="Bayesian Brain Theory").pack())
+ast_button = InlineKeyboardButton(text="Attention Schema Theory", callback_data=ConsciousCallBack(conscious_thought="Attention Schema Theory").pack())
+quantum_button = InlineKeyboardButton(text="Quantum Consciousness", callback_data=ConsciousCallBack(conscious_thought="Quantum Consciousness").pack())
+
+
+
 # Robot's Inline Keyboard
 robots_inline = InlineKeyboardMarkup(inline_keyboard=[
     [atlas_button, figure02_button],  # Row 1
@@ -43,4 +53,16 @@ intelligence_inline = InlineKeyboardMarkup(
           [chc_theory],
           [goleman_button]
           ]
+)
+
+# conscious_inline
+conscious_inline = InlineKeyboardMarkup(
+      inline_keyboard=[
+            [gwt_button],
+            [iit_button],
+            [hot_button],
+            [bayesian_button],
+            [ast_button],
+            [quantum_button]
+      ]
 )
